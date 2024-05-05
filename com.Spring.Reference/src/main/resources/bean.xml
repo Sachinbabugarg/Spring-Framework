@@ -1,0 +1,47 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:c="http://www.springframework.org/schema/c"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<bean  name="Carses"  class="com.Spring.reference1.Cars">
+<property name="car1" value="Farari"></property>
+<property name="car2" value="BMW"></property>
+<property name="car3" value="Fourtuner"></property>
+</bean>
+<bean  name="Carse"  class="com.Spring.reference1.Cars">
+<constructor-arg value="BMW"></constructor-arg>
+<constructor-arg value="AuDI"></constructor-arg> 
+<constructor-arg value="Farari"></constructor-arg>
+</bean>
+<bean name="Emp1"  class="com.Spring.reference1.Employee">
+<property name="id" value="1"></property>
+<property name="name" value="Sachin"></property>
+<property   name="list" >
+<list> 
+<value>Sachin</value>
+<value>Babu</value>
+<value>Garg</value>
+</list>
+
+</property>
+<property name="cars" ref="Carses"></property>
+
+</bean>
+<bean name="Emp2" class="com.Spring.reference1.Employee">
+<constructor-arg  value="1"/>
+<constructor-arg  value="Sachin"/>
+<constructor-arg  name="list">
+<list>
+<value>Sachin</value>
+<value>Babu</value>
+<value>Garg</value>
+</list>
+</constructor-arg>
+<constructor-arg ref="Carse"></constructor-arg>
+</bean>
+
+</beans>
